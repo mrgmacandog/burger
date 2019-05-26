@@ -1,6 +1,9 @@
 // Import MySQL dependency
 const mysql = require("mysql");
 
+// Import keys dependency
+const keys = require("../keys");
+
 // Instantiate a DB connection
 const connection = mysql.createConnection({
   host: "localhost",
