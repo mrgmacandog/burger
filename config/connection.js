@@ -1,6 +1,9 @@
 // Import MySQL dependency
 const mysql = require("mysql");
 
+// Include the dotenv npm package and run the config function
+require("dotenv").config();
+
 // Import keys dependency
 const keys = require("../keys");
 
