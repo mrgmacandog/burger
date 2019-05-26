@@ -10,9 +10,9 @@ const burger = require("../models/burger");
 // At the root, display index.handlebars using main.handlebars
 router.get("/", function(req, res) {
     burger.all(function (data) {
-        console.log(data);
+        // console.log(data);
+        res.render("index", {burgers: data});
     });
-    res.render("index", {});
 });
 
 // Export routes for server.js to use
