@@ -19,5 +19,20 @@
                 location.reload();
             });
         });
-    })
+
+        // When the submit button is clicked
+        $(".create-form").on("submit", function () {
+            
+            // Create object for POST method to use
+            let newBurger = {
+                burger_name: $("#new-burger").val().trim()  // Text typed inside the text box
+            }
+
+            // POST to the API with the given new burger information
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+            });
+        });
+    });
 })();
