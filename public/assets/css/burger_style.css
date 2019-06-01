@@ -2,3 +2,16 @@ body {
     background-color: #FFD06E;
     text-align: center;
 }
+
+p {
+    margin-bottom: 0px;
+}
+
+.burger-row {
+    margin-bottom: 10px;
+}
+
+.burger-name {
+    background-color: #FFF;
+    margin-bottom: 10px;
+}
