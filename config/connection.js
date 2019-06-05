@@ -8,7 +8,7 @@ require("dotenv").config();
 const keys = require("../keys");
 
 // Initialize the connection
-const connection;
+let connection;
 
 // Instantiate a DB connection
 if (process.env.JAWSDB_URL) {
