@@ -3,15 +3,11 @@ body {
     text-align: center;
 }
 
-p {
-    margin-bottom: 0px;
+#all-burgers {
+    margin-bottom: 20px;
 }
 
-.burger-row {
-    margin-bottom: 10px;
-}
-
-.burger-name {
-    background-color: #FFF;
+.card {
+    width: 100%;
     margin-bottom: 10px;
 }

@@ -1,39 +1,36 @@
-<div class="row">
-    <div class="col-md-6">
+<div id="all-burgers" class="row">
+    <div id="ready-to-eat" class="col-md-6">
         <h2>Ready to eat</h2>
-    </div>
-
-    <div class="col-md-6">
-        <h2>Devoured</h2>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-6">
-        {{!-- <h2>Ready to eat</h2> --}}
-
-        {{#each burgers}}
-        {{#unless devoured}}
-        <div class="row burger-row">
-            <div class="col-md-9">
-                <p class="burger-name">{{id}}. {{burger_name}}</p>
+        <div class="row">
+            {{#each burgers}}
+            {{#unless devoured}}
+            <div class="col-md-6 d-flex align-items-stretch">
+                <div class="card shadow rounded">
+                    <div class="card-body">
+                        <h5 class="card-title">{{id}}. {{burger_name}}</h5>
+                        <button id="burger-{{id}}" burger="{{id}}" class="btn btn-warning burger-button">Devour</button>
+                    </div>
+                </div>
             </div>
-
-            <div class="col-md-3">
-                <button id="burger-{{id}}" burger="{{id}}" class="btn btn-light burger-button">Devour</button>
-            </div>
+            {{/unless}}
+            {{/each}}
         </div>
-        {{/unless}}
-        {{/each}}
     </div>
 
-    <div class="col-md-6">
-        {{!-- <h2>Devoured</h2> --}}
-
-        {{#each burgers}}
-        {{#if devoured}}
-        <p class="burger-name">{{id}}. {{burger_name}}</p>
-        {{/if}}
-        {{/each}}
+    <div id="devoured" class="col-md-6">
+        <h2>Devoured</h2>
+        <div class="row">
+            {{#each burgers}}
+            {{#if devoured}}
+            <div class="col-md-6 d-flex align-items-stretch">
+                <div class="card shadow rounded">
+                    <div class="card-body">
+                        <h5 class="card-title">{{id}}. {{burger_name}}</h5>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
     </div>
 </div>

@@ -5,7 +5,7 @@ const orm = require("../config/orm");
 var burger = {
     /**
      * Get all the burgers from the database
-     * @param {Function} cb 
+     * @param {Function} cb Callback function
      */
     all: function (cb) {
         // Select all burgers from the burgers table
@@ -16,20 +16,20 @@ var burger = {
 
     /**
      * Add a new burger to the database with the given burger_name
-     * @param {String} burger_name 
-     * @param {Function} cb 
+     * @param {String} burgerName Burger name
+     * @param {Function} cb Callback function
      */
-    create: function (burger_name, cb) {
+    create: function (burgerName, cb) {
         // Insert a record into the burgers table with the given burger name and setting devoured to false
-        orm.insertOne("burgers", ["burger_name", "devoured"], [burger_name, 0], function (res) {
+        orm.insertOne("burgers", ["burger_name", "devoured"], [burgerName, 0], function (res) {
             cb(res);
         });
     },
 
     /**
      * Update the devoured status of the burger with the given id from FALSE to TRUE
-     * @param {String} id 
-     * @param {Function} cb 
+     * @param {String} id Burger ID
+     * @param {Function} cb Callback function
      */
     devour: function (id, cb) {
         orm.updateOne("burgers", { devoured: 1 }, "id = " + id, function (res) {
