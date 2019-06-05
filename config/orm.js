@@ -1,7 +1,10 @@
 // Import MySQL connection
 const connection = require("./connection");
 
-// Helper function to convert object key/value pairs to SQL syntax
+/**
+ * Helper function to convert object key/value pairs to SQL syntax
+ * @param {Object} ob Key/value pair object
+ */
 function objToSql(ob) {
     // Initialize empty array
     var arr = [];
@@ -29,8 +32,8 @@ function objToSql(ob) {
 const orm = {
     /**
      * Selects all record from the given table in the database
-     * @param {String} table 
-     * @param {Function} cb 
+     * @param {String} table Table name
+     * @param {Function} cb Callback function
      */
     selectAll: function (table, cb) {
         // MySQL query for the database
@@ -49,10 +52,10 @@ const orm = {
 
     /**
      * Inserts a record into the table give with the proper column names and values
-     * @param {String} table 
-     * @param {String array} cols 
-     * @param {String array} vals 
-     * @param {Function} cb 
+     * @param {String} table Table name
+     * @param {String array} cols Column names
+     * @param {String array} vals Values for each column
+     * @param {Function} cb Callback function
      */
     insertOne: function (table, cols, vals, cb) {
         // Get appropriate number of question marks
@@ -80,10 +83,10 @@ const orm = {
      * Update a record given the condition with the column names and update values defined in objColVals
      * Ex: The object {name: "new name", age: 25} with the condition "id = 1" will update id 1's name to
      *     "new name" and its age to 25.
-     * @param {String} table 
-     * @param {Object} objColVals 
-     * @param {String} condition 
-     * @param {Function} cb 
+     * @param {String} table Table name
+     * @param {Object} objColVals Column names
+     * @param {String} condition SQL condition
+     * @param {Function} cb Callback function
      */
     updateOne: function (table, objColVals, condition, cb) {
         // MySQL query for the database
